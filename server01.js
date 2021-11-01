@@ -48,7 +48,7 @@ app.get("/login", function (req, res) {
 
 })
 
-app.post("/fileUpload", function (req, res) {
+app.get("/fileUpload", function (req, res) {
     multipleFiles = "Zero";
     let form = formidable({});
     form.keepExtensions = true   // zapis z rozszerzeniem pliku
