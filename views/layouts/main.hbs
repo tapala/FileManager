@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       
+    <meta charset="UTF-8">
+       
+    <link rel="stylesheet" href="">
+        <title>File Manager</title>
+</head>
+<style>
+    body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        max-width: 100%;
+    }
+
+    #Header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 5vw;
+        width: 100vw;
+        height: 15vh;
+        background-color: #4322c7;
+    }
+
+    #Header>a {
+        text-decoration: underline;
+        color: white;
+        margin-right: 2vw;
+        display: flex;
+    }
+
+    #contents {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #leftMargin {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        min-width: 20vw;
+        min-height: 80vh;
+        background-color: #cccccc;
+        color: #888888;
+    }
+
+    #content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        min-width: 80vw;
+        min-height: 85vh;
+    }
+
+    #filesTable {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+    }
+
+    .filesRow {
+        display: flex;
+        flex-direction: row;
+        height: 8vh;
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    .fileColumn {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        overflow: hidden;
+        align-items: center;
+        color: #0000bb;
+    }
+
+    .formBtn {
+        color: #cdcdcd;
+        text-decoration: overline;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="Header">
+            <a href="/">
+                <h1>UPLOAD</h1>
+            </a>
+            <a href="/filemanager">
+                <h1>FILEMANAGER</h1>
+            </a>
+            <a href="/logout" style="align-self:center; justify-self:end">
+                <p style="color:red; text-decoration:underline red; align-self:flex-end">LOG OUT</p>
+            </a>
+        </div>
+        <div id="contents">
+            {{{body}}}
+        </div>
+    </div>
+</body>
+
+</html>

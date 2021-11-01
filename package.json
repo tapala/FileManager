@@ -1,0 +1,19 @@
+{
+  "name": "projekt",
+  "version": "1.0.0",
+  "description": "Projekt Filemanager",
+  "main": "server01.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "formidable": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server01.js"
+  },
+  "author": "Kacper Wesołowski",
+  "license": "ISC"
+}

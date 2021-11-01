@@ -1,0 +1,41 @@
+<div id="leftMargin">
+    <div>
+        <h2 style="display: flex;justify-content:center">filemanager</h2>
+        <form style="display: flex;justify-content:center" method="post" action="deleteAll">
+            <input type="submit" value="USUŃ DANE O PLIKACH Z TABLICY"
+                style="border:none; background-color:inherit; color:#999999; text-decoration:underline; font-weight:bold">
+        </form>
+    </div>
+</div>
+<div id="content">
+    <div id="filesTable">
+        <div class="filesRow" style="background-color: cornflowerblue; height:5vh; color:cornsilk">
+            <div class="fileColumn" style="color:inherit">ID</div>
+            <div class="fileColumn" style="color:inherit">OBRAZ</div>
+            <div class="fileColumn" style="color:inherit">NAME</div>
+            <div class="fileColumn" style="color:inherit">SIZE</div>
+            <div class="fileColumn" style="color:inherit">TYPE</div>
+            <div class="fileColumn" style="color:inherit">-</div>
+            <div class="fileColumn" style="color:inherit">-</div>
+            <div class="fileColumn" style="color:inherit">-</div>
+        </div>
+        {{#each files}}
+        <div class="filesRow">
+            <div class="fileColumn">{{id}}</div>
+            <div class="fileColumn"><img src="{{image}}.png" width="50px" height="50px"></div>
+            <div class="fileColumn">{{name}}</div>
+            <div class="fileColumn">{{size}}</div>
+            <div class="fileColumn">{{type}}</div>
+            <form class="fileColumn" action="deleteFiles/{{id}}" method="post"><input type="submit" value="DELETE"
+                    style="border:none; background-color:inherit; color:#999999; text-decoration:underline; font-weight:bold">
+            </form>
+            <form class="fileColumn" action="info/{{id}}" method="post"><input type="submit" value="INFO"
+                    style="border:none; background-color:inherit; color:#999999; text-decoration:underline; font-weight:bold">
+            </form>
+            <form class="fileColumn" action="download/{{id}}" method="post"><input type="submit" value="DOWNLOAD"
+                    style="border:none; background-color:inherit; color:#999999; text-decoration:underline; font-weight:bold">
+            </form>
+        </div>
+        {{/each}}
+    </div>
+</div>
