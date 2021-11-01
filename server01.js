@@ -53,7 +53,7 @@ app.post("/fileUpload", function (req, res) {
     let form = formidable({});
     form.keepExtensions = true   // zapis z rozszerzeniem pliku
     form.multiples = true
-    //form.uploadDir = __dirname + '/static/upload/'
+    form.uploadDir = __dirname + '/static/upload/'
     form.parse(req, function (err, fields, files) {
         if (Array.isArray(files.fileToUpload)) {
             multipleFiles = "multiple"
