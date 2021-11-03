@@ -113,8 +113,9 @@ app.post("/fileUpload", function (req, res) {
         }
         else {
         }
+        res.render();
     });
-    res.render('index.hbs');
+    res.redirect("/");
 })
 
 app.get("/filemanager", function (req, res) {
