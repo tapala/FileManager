@@ -49,13 +49,12 @@ app.get("/login", function (req, res) {
 })
 
 app.post("/fileUpload", function (req, res) {
-
+    multipleFiles = "Zero";
     let form = formidable({});
     form.keepExtensions = true   // zapis z rozszerzeniem pliku
     form.multiples = true
     form.uploadDir = __dirname + '/static/upload/'
     form.parse(req, function (err, fields, files) {
-        let multipleFiles = "Zero";
         if (Array.isArray(files.fileToUpload)) {
             multipleFiles = "multiple"
         }
