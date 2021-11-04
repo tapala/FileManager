@@ -12,7 +12,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 app.set('views', path.join(__dirname, 'views'));         // ustalamy katalog views
-app.engine('hbs', hbs({ defaultLayout: 'main.hbs' }));   // domyślny layout, potem można go zmienić
+app.engine('hbs', hbs({ defaultLayout: 'main.hbs', partialsDir: "views/partials" }));   // domyślny layout, potem można go zmienić
 app.set('view engine', 'hbs');
 app.use(express.json());
 
