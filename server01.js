@@ -7,22 +7,21 @@ var PORT = process.env.PORT || 3000;
 var logged = false;
 var context = { files: [] };
 var id = 0;
-//const bodyParser = require('body-parser');
 app.use(express.urlencoded({
     extended: true
 }));
-app.set('views', path.join(__dirname, 'views'));         // ustalamy katalog views
-app.engine('hbs', hbs({ defaultLayout: 'main.hbs', partialsDir: "views/partials" }));   // domyślny layout, potem można go zmienić
+app.set('views', path.join(__dirname, 'views'));         
+app.engine('hbs', hbs({ defaultLayout: 'main.hbs', partialsDir: "views/partials" }));   
 app.set('view engine', 'hbs');
 app.use(express.json());
 
 app.get("/", function (req, res) {
-    //res.render('index.hbs');   // nie podajemy ścieżki tylko nazwę pliku
+
     if (logged) {
         res.render('index.hbs')
     }
     else {
-        res.render('login.hbs', { layout: "loginLayout.hbs" }); // opcjonalnie podajemy konkretny layout dla tego widoku
+        res.render('login.hbs', { layout: "loginLayout.hbs" }); 
     }
 
 })
@@ -51,7 +50,7 @@ app.get("/login", function (req, res) {
 app.post("/fileUpload", function (req, res) {
     multipleFiles = "Zero";
     let form = formidable({});
-    form.keepExtensions = true   // zapis z rozszerzeniem pliku
+    form.keepExtensions = true
     form.multiples = true
     form.uploadDir = __dirname + '/static/upload/'
     form.parse(req, function (err, fields, files) {
@@ -165,7 +164,7 @@ app.get("/logout", function (req, res) {
 app.use(express.static('static/gfx'));
 app.get("/*", function (req, res) {
     res.render('wrongLink.hbs', { layout: "wrongLoginLayout.hbs" });
-    //res.sendFile(__dirname + '/static/gfx/maklowicz.jpg');
+
 })
 
 app.listen(PORT, function () {
